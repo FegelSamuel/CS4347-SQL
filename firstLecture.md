@@ -74,12 +74,36 @@ Retake Discrete Math (and maybe CS1) if you don't know this one
 ### FOREIGN KEY
 Some UNIQUE or PRIMARY KEY of some other table. A table with a foreign key effectively has a reference to whatever table it has a relation to. 
 
-# As of writing this on March 26th, the lecture ends about here. Will make more when the lecture gets to more. 
-
-# Data Definition
-
-
 # Retrieval Queries
+## INSERT
+```SQL
+insert into branch
+  values('Perryridge', 'Dallas', null)
+```
+Attribute list can be omitted if it is the same as in CREATE TABLE
+NULL and DEFAULT values can be specified
+## DELETE
+Deleting all tuples from a relation
+```SQL
+delete from branch
+```
+Delete specific tuple
+```SQL
+delete from branch where 'Dallas'
+```
+## DROP TABLE
+Delete the whole relation lol
+```SQL
+DROP TABLE DEPENDENT
+```
+## ALTER TABLE
+* The alter table command is used to add or delete attributes to an existing relation:
+```SQL
+alter table branch add phone_number char(10)
+alter table branch drop branch_city
+```
+
+# As of writing this on March 26th, the lecture ends about here. Will make more when the lecture gets to more. 
 
 # Specifying Updates
 
