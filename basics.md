@@ -67,13 +67,34 @@ primary key (A1, A3)
 ```
 ### PRIMARY KEY
 The chosen minimal set that represents a given entity in your database uniquely.
+
+<br>
+
+`(Primary Key) -> not null ^ unique`
+
+<br>
+
+discrete math moment
 ### UNIQUE
 Any minimal set that represents a given entity in your database uniquely (**Candidate Key**).
 ### NOT NULL
 Retake Discrete Math (and maybe CS1) if you don't know this one
 ### FOREIGN KEY
 Some UNIQUE or PRIMARY KEY of some other table. A table with a foreign key effectively has a reference to whatever table it has a relation to. 
-
+### default
+This is saying "this column is defaulted to so and so" if not specified upon creating an Entity. (for example, price is default 0)
+### check(P)
+P is some predicate. **Check is actually important to know**. Basically, it's a custom constraint you place on any column. For example, `check(assets >= 0)`
+#### Example (assuming this statement exists in some table already defined)
+```SQL
+check(degree_level in (Bachelors', 'Masters', 'Doctorate')
+```
+#### Example 2 (making a custom domain/data type)
+```SQL
+create domain hourly_wage numeric(5,2)
+  constraint value_test check(value >= 4.00)
+```
+Some table can use hourly_wage as a domain (another name for data type). Rememember that the word `value` is a keyword. 
 # Retrieval Queries
 ## INSERT
 ```SQL
